@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demo for DropdownJs">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Steven Cybinski">
+
+    <title>DropdownJs - Demo</title>
+
+    <script src="./dropdown.js"></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th width="70%">Description</th>
+        <th width="30%">Demo</th>
+      </tr>
+      <!-- Default dropdown -->
+      <tr>
+        <td colspan="2"><h3>Default HTML dropdown</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;select&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/select&gt;
+          </div>
+        </td>
+        <td>
+          <select>
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </select>
+        </td>
+      </tr>
+      <!-- Default dropdown-js -->
+      <tr>
+        <td colspan="2"><h3>Default DropdownJs dropdown</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/dropdown-js&gt;
+          </div>
+        </td>
+        <td>
+          <dropdown-js>
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+        </td>
+      </tr>
+      <!-- Custom text -->
+      <tr>
+        <td colspan="2"><h3>Custom text</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js selection-placeholder="Hello" filter-placeholder="World"&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/dropdown-js&gt;
+          </div>
+        </td>
+        <td>
+          <dropdown-js selection-placeholder="Hello" filter-placeholder="World">
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+        </td>
+      </tr>
+      <!-- Default selection and change listener -->
+      <tr>
+        <td colspan="2"><h3>Default selection and change listener</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js id="demo-1" default="#ff00ff"&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/dropdown-js&gt;<br><br>
+            demo1.addEventListener('change', function(e) { <br>
+            &nbsp;&nbsp;console.log(e.text, e.value);<br>
+            });
+          </div>
+        </td>
+        <td>
+          <dropdown-js id="demo-1" default="#ff00ff">
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+          <div id="demo-1-output">Selected: </div>
+        </td>
+        <script>
+            var demo1 = document.getElementById('demo-1'),
+                demo1Out = document.getElementById('demo-1-output');
+            demo1.addEventListener('change', function(e) {
+              demo1Out.innerHTML = `Selected: ${e.text}=${e.value}`;
+            });
+        </script>
+      </tr>
+      <!-- Select option through JS -->
+      <tr>
+        <td colspan="2"><h3>Select option through JS</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js id="demo-2"&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/dropdown-js&gt;<br><br>
+            dropdownJsInitFunctions.push(function() {<br>
+            &nbsp;&nbsp;var demo2 = document.getElementById('demo-2');<br>
+            &nbsp;&nbsp;demo2.selectOption('#ff0000');<br>
+            });
+          </div>
+        </td>
+        <td>
+          <dropdown-js id="demo-2">
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+          <script>
+            dropdownJsInitFunctions.push(function() {
+              var demo2 = document.getElementById('demo-2');
+              demo2.selectOption('#ff0000');
+            });
+          </script>
+        </td>
+      </tr>
+      <!-- Custom search regex (start with)-->
+      <tr>
+        <td colspan="2"><h3>Custom search regex (start with)</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js filter="^{{var}}.*"&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/dropdown-js&gt;
+          </div>
+        </td>
+        <td>
+          <dropdown-js filter="^{{var}}.*">
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+        </td>
+      </tr>
+      <!-- Colorized -->
+      <tr>
+        <td colspan="2"><h3>Colorized</h3></td>
+      </tr>
+      <tr>
+        <td>
+        <div class="code">
+          .style-me dropdown-js button,<br>
+          .style-me dropdown-js input,<br>
+          .style-me dropdown-js option,<br>
+          .style-me dropdown-js .drop-container {<br>
+          &nbsp;&nbsp;background-color: #5ccccc;<br>
+          &nbsp;&nbsp;border-color: #009999;<br>
+          &nbsp;&nbsp;color: #006363;<br>
+          }
+        </div>
+        </td>
+        <td class="style-me">
+          <dropdown-js>
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+          <style>
+            .style-me dropdown-js button,
+            .style-me dropdown-js input,
+            .style-me dropdown-js option,
+            .style-me dropdown-js .drop-container {
+              background-color: #5ccccc;
+              border-color: #009999;
+              color: #006363;
+            }
+          </style>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><h3>Add options through JS and show more options</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js id="demo-3" show-options="5"&gt;<br>&lt;/dropdown-js&gt;<br><br>
+            dropdownJsInitFunctions.push(function() {<br>
+            &nbsp;&nbsp;var demo3 = document.getElementById('demo-3');<br>
+            &nbsp;&nbsp;for(var i=1; i&lt;=99; i++) {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;demo3.addOption(i, 'Age of ' + i);<br>
+            &nbsp;&nbsp;}<br>
+            });
+          </div>
+        </td>
+        <td>
+          <dropdown-js id="demo-3" show-options="10">
+          </dropdown-js>
+        </td>
+        <script>
+            dropdownJsInitFunctions.push(function() {
+              var demo3 = document.getElementById('demo-3');
+              for(var i=1; i<=99; i++) {
+                demo3.addOption(i, 'Age of ' + i);
+              }
+            });
+        </script>
+      </tr>
+      <!-- Remove option through JS -->
+      <tr>
+        <td colspan="2"><h3>Remove options through JS</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="code">
+            &lt;dropdown-js id="demo-4"&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#0000ff"&gt;Blue&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ffff"&gt;Cyan&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#00ff00"&gt;Green&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff00ff"&gt;Magenta&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ff0000"&gt;Red&lt;/option&gt;<br>
+            &nbsp;&nbsp;&lt;option value="#ffff00"&gt;Yellow&lt;/option&gt;<br>
+            &lt;/dropdown-js&gt;<br><br>
+            dropdownJsInitFunctions.push(function() {<br>
+            &nbsp;&nbsp;var demo4 = document.getElementById('demo-4');<br>
+            &nbsp;&nbsp;demo4.selectOption('#00ffff');<br><br>
+            &nbsp;&nbsp;demo4.removeOption('#00ffff');<br>
+            &nbsp;&nbsp;demo4.removeOption('#ff00ff');<br>
+            &nbsp;&nbsp;demo4.removeOption('#ffff00');<br>
+            });
+          </div>
+        </td>
+        <td>
+          <dropdown-js id="demo-4">
+            <option value="#0000ff">Blue</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#00ff00">Green</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffff00">Yellow</option>
+          </dropdown-js>
+          <script>
+            dropdownJsInitFunctions.push(function() {
+              var demo4 = document.getElementById('demo-4');
+              demo4.selectOption('#00ffff');
+
+              demo4.removeOption('#00ffff');
+              demo4.removeOption('#ff00ff');
+              demo4.removeOption('#ffff00');
+            });
+          </script>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      table {
+        width: 100%;
+      }
+      h3 {
+        margin: 0;
+      }
+      select, 
+      dropdown-js button, 
+      dropdown-js .drop-container {
+        width: 100%;
+      }
+      .code {
+        box-sizing: border-box;
+        width: 100%;
+        background-color: #eeeeee;
+        color: #999999;
+        border: 1px solid #333333;
+        padding: 5px;
+      }
+    </style>
+  </body>
+</html>
